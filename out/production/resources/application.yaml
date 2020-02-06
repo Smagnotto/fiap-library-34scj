@@ -12,3 +12,7 @@ spring:
       name: usuario
       password: senha
       roles: ADMIN
+
+jwt:
+  secret: fiapsecretjwt
+  expire: 1
