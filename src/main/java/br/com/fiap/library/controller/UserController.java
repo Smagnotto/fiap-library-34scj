@@ -6,6 +6,7 @@ import br.com.fiap.library.dto.JwtDTO;
 import br.com.fiap.library.dto.UserDTO;
 import br.com.fiap.library.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,12 +20,12 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public JwtDTO login(AuthDTO authDTO) {
+    public JwtDTO login(@RequestBody AuthDTO authDTO) {
         return userService.login(authDTO);
     }
 
     @PostMapping
-    public UserDTO create(CreateUserDTO createUserDTO) {
+    public UserDTO create(@RequestBody CreateUserDTO createUserDTO) {
         return userService.create(createUserDTO);
     }
 }
